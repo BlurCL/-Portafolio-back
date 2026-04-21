@@ -6,7 +6,7 @@ function App() {
     <div className="app-shell">
       <header className="app-header">
         <h1>ConstruFácil</h1>
-        <p>Calcula la superficie de tu proyecto y elige el tipo de obra con más opciones disponibles.</p>
+        <p>Calcla la superficie de tu proyecto y selecciona el tipo de obra con más opciones disponibles.</p>
       </header>
       <main>
         <FormularioProyecto />

@@ -67,12 +67,13 @@ public class CalculoRepository {
     }
 
     public Integer insertarPresupuesto(Integer idObra, double total) {
-        Map<String, Object> params = new HashMap<>();
-        params.put("id_obra", idObra);
-        params.put("total_presupuesto", total);
+    String sql = """
+        INSERT INTO presupuestos (id_obra, fecha_creacion, total_presupuesto)
+        VALUES (?, CURRENT_DATE, ?)
+        RETURNING id_presupuesto
+    """;
 
-        Number key = presupuestoInsert.executeAndReturnKey(params);
-        return key.intValue();
+    return jdbcTemplate.queryForObject(sql, Integer.class, idObra, total);
     }
 
     public void insertarDetallePresupuesto(Integer idPresupuesto, Integer idMaterial,

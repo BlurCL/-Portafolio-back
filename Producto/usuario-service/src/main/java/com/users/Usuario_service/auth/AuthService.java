@@ -35,6 +35,7 @@ public class AuthService {
         }
 
         Usuario usuario = new Usuario();
+        usuario.setRut(request.getRut()); 
         usuario.setNombre(request.getNombre());
         usuario.setFechaNacimiento(request.getFechaNacimiento());
         usuario.setCorreo(request.getCorreo());
@@ -66,3 +67,24 @@ public class AuthService {
         return response;
     }
 }
+
+
+/*
+Json para probar en postman
+{
+    "rut": "19.123.456-7",
+    "nombre": "Cristobal",
+    "fechaNacimiento": "1995-08-25",
+    "correo": "cristobal@ejemplo.com",
+    "telefono": "+56912345678",
+    "direccion": "Av. Principal 123",
+    "region": "Metropolitana",
+    "ciudad": "Santiago",
+    "comuna": "Maipú",
+    "password": "miPassword123",
+    "confirmarPassword": "miPassword123"
+}
+
+
+
+*/
